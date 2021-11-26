@@ -1,10 +1,8 @@
 ﻿using Dapper;
-using DataAccess.Models;
-using Microsoft.Data.Sqlite;
-using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,7 +18,7 @@ namespace DataAccess.DbAccess
 
         public async Task<List<T>> LoadData<T, U>(string sqlCommand, U parameters)
         {
-            using (IDbConnection connection = new SqliteConnection(GetConnectionString(connectionId)))
+            using (IDbConnection connection = new SQLiteConnection(GetConnectionString(connectionId)))
             {
                 var output = await connection.QueryAsync<T>(sqlCommand, new DynamicParameters());
                 return output.ToList();
@@ -29,7 +27,7 @@ namespace DataAccess.DbAccess
 
         public async Task SaveData<T>(string sqlCommand, T parameters)
         {
-            using (IDbConnection connection = new SqliteConnection(GetConnectionString(connectionId)))
+            using (IDbConnection connection = new SQLiteConnection("test"))
             {
                 await connection.ExecuteAsync(sqlCommand, parameters);
             }
@@ -37,7 +35,8 @@ namespace DataAccess.DbAccess
 
         private string GetConnectionString(string id = "Default")
         {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            return connectionString;
         }
     }
 }

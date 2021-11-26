@@ -19,7 +19,7 @@ namespace DataAccess.Repositories
 
         public Task<List<User>> GetUsers()
         {
-            return _db.LoadData<User, dynamic>("dbo.spUser_GetAll", new { });
+            return _db.LoadData<User, dynamic>("SELECT * FROM Users", new { });
         }
 
         public async Task<User> GetUser(int id)

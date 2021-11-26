@@ -59,6 +59,7 @@ namespace CRUD.UI
             this.button2.TabIndex = 5;
             this.button2.Text = "Read";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -94,14 +95,14 @@ namespace CRUD.UI
             // 
             this.tbFirstName.Location = new System.Drawing.Point(105, 12);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(221, 22);
+            this.tbFirstName.Size = new System.Drawing.Size(221, 20);
             this.tbFirstName.TabIndex = 0;
             // 
             // tbLastName
             // 
             this.tbLastName.Location = new System.Drawing.Point(105, 40);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(221, 22);
+            this.tbLastName.Size = new System.Drawing.Size(221, 20);
             this.tbLastName.TabIndex = 1;
             // 
             // label1
@@ -109,7 +110,7 @@ namespace CRUD.UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(23, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "FirstName:";
             // 
@@ -118,7 +119,7 @@ namespace CRUD.UI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(23, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "LastName:";
             // 
