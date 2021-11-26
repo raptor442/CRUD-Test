@@ -38,6 +38,7 @@ namespace CRUD.UI
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@ namespace CRUD.UI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(609, 202);
+            this.button2.Location = new System.Drawing.Point(804, 208);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -73,7 +74,7 @@ namespace CRUD.UI
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(268, 173);
+            this.button4.Location = new System.Drawing.Point(251, 173);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 4;
@@ -83,51 +84,68 @@ namespace CRUD.UI
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(349, 12);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(335, 184);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(530, 184);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(105, 12);
+            this.tbFirstName.Location = new System.Drawing.Point(105, 43);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(221, 20);
+            this.tbFirstName.Size = new System.Drawing.Size(221, 22);
             this.tbFirstName.TabIndex = 0;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(105, 40);
+            this.tbLastName.Location = new System.Drawing.Point(105, 71);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(221, 20);
+            this.tbLastName.Size = new System.Drawing.Size(221, 22);
             this.tbLastName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 13);
+            this.label1.Location = new System.Drawing.Point(23, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "FirstName:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 45);
+            this.label2.Location = new System.Drawing.Point(23, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(76, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "LastName:";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(23, 9);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(19, 17);
+            this.lblID.TabIndex = 9;
+            this.lblID.Text = "id";
             // 
             // CRUDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 243);
+            this.ClientSize = new System.Drawing.Size(891, 243);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbLastName);
@@ -141,6 +159,7 @@ namespace CRUD.UI
             this.Name = "CRUDForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Joe The CRUD";
+            this.Load += new System.EventHandler(this.CRUDForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,6 +177,7 @@ namespace CRUD.UI
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblID;
     }
 }
 

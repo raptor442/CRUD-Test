@@ -27,7 +27,7 @@ namespace DataAccess.DbAccess
 
         public async Task SaveData<T>(string sqlCommand, T parameters)
         {
-            using (IDbConnection connection = new SQLiteConnection("test"))
+            using (IDbConnection connection = new SQLiteConnection(GetConnectionString(connectionId)))
             {
                 await connection.ExecuteAsync(sqlCommand, parameters);
             }

@@ -31,12 +31,12 @@ namespace DataAccess.Repositories
         }
 
         public Task InsertUser(User user) =>
-            _db.SaveData("dbo.spUser_Insert", new { user.FirstName, user.LastName });
+            _db.SaveData("insert into Users (FirstName, LastName) values (@FirstName, @LastName)", user);
 
         public Task UpdateUser(User user) =>
-            _db.SaveData("dbo.spUser_Update", user);
+            _db.SaveData("update Users set FirstName = @FirstName, LastName = @LastName WHERE Id = @Id", user);
 
         public Task DeleteUser(int id) =>
-            _db.SaveData("dbo.spUser_Delete", new { Id = id });
+            _db.SaveData("delete from Users WHERE Id = @Id", new { Id = id });
     }
 }
