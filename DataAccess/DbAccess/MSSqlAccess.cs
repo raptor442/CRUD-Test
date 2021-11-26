@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -9,11 +9,10 @@ namespace DataAccess.DbAccess
 {
     public class MSSqlAccess : ISqlAccess
     {
-        private readonly IConfiguration _config;
-
-        public MSSqlAccess(IConfiguration config)
+        private readonly string connectionId;
+        public MSSqlAccess(string connectionId)
         {
-            _config = config;
+            this.connectionId = connectionId;
         }
 
         public async Task<IEnumerable<T>> LoadData<T, U>(
@@ -23,7 +22,7 @@ namespace DataAccess.DbAccess
         {
             IEnumerable<T> results;
 
-            using (IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId)))
+            using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionId)))
             {
                 results = await connection.QueryAsync<T>(storedProcedure, parameters,
                 commandType: CommandType.StoredProcedure);
@@ -37,11 +36,16 @@ namespace DataAccess.DbAccess
             T parameters,
             string connectionId = "Default")
         {
-            using (IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId)))
+            using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionId)))
             {
                 await connection.ExecuteAsync(storedProcedure, parameters,
                                 commandType: CommandType.StoredProcedure);
             }
+        }
+
+        private static string GetConnectionString(string id = "Default")
+        {
+            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
     }
 }
