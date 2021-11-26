@@ -17,7 +17,7 @@ namespace DataAccess.Repositories
             _db = db;
         }
 
-        public Task<IEnumerable<User>> GetUsers()
+        public Task<List<User>> GetUsers()
         {
             return _db.LoadData<User, dynamic>("dbo.spUser_GetAll", new { });
         }

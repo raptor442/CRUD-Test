@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DataAccess.DbAccess
@@ -15,10 +16,9 @@ namespace DataAccess.DbAccess
             this.connectionId = connectionId;
         }
 
-        public async Task<IEnumerable<T>> LoadData<T, U>(
+        public async Task<List<T>> LoadData<T, U>(
             string storedProcedure,
-            U parameters,
-            string connectionId = "Default")
+            U parameters)
         {
             IEnumerable<T> results;
 
@@ -28,13 +28,12 @@ namespace DataAccess.DbAccess
                 commandType: CommandType.StoredProcedure);
             }
 
-            return results;
+            return results.ToList();
         }
 
         public async Task SaveData<T>(
             string storedProcedure,
-            T parameters,
-            string connectionId = "Default")
+            T parameters)
         {
             using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionId)))
             {

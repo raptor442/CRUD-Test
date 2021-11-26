@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{50C72AB8-A567-4DE0-B0EE-FA3DBC6A0BB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD.UI", "CRUD.UI\CRUD.UI.csproj", "{41EB4735-684A-4E7B-B3AE-B86166C28622}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{50C72AB8-A567-4DE0-B0EE-FA3DBC6A0BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C72AB8-A567-4DE0-B0EE-FA3DBC6A0BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C72AB8-A567-4DE0-B0EE-FA3DBC6A0BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
