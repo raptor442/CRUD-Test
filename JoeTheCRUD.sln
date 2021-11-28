@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD.UI", "CRUD.UI\CRUD.UI.csproj", "{41EB4735-684A-4E7B-B3AE-B86166C28622}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "JoeTheCRUDDatabase", "JoeTheCRUDDatabase\JoeTheCRUDDatabase.sqlproj", "{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41EB4735-684A-4E7B-B3AE-B86166C28622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D68450-AF6D-49B2-88FC-CC5C9ABA6189}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

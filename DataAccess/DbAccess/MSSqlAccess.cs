@@ -17,28 +17,26 @@ namespace DataAccess.DbAccess
         }
 
         public async Task<List<T>> LoadData<T, U>(
-            string storedProcedure,
+            string sqlcommand,
             U parameters)
         {
             IEnumerable<T> results;
 
             using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionId)))
             {
-                results = await connection.QueryAsync<T>(storedProcedure, parameters,
-                commandType: CommandType.StoredProcedure);
+                results = await connection.QueryAsync<T>(sqlcommand, parameters);
             }
 
             return results.ToList();
         }
 
         public async Task SaveData<T>(
-            string storedProcedure,
+            string sqlcommand,
             T parameters)
         {
             using (IDbConnection connection = new SqlConnection(GetConnectionString(connectionId)))
             {
-                await connection.ExecuteAsync(storedProcedure, parameters,
-                                commandType: CommandType.StoredProcedure);
+                await connection.ExecuteAsync(sqlcommand, parameters);
             }
         }
 

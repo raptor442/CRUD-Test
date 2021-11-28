@@ -15,7 +15,8 @@ namespace CRUD.UI
         public CRUDForm()
         {
             InitializeComponent();
-            ISqlAccess db = new SqliteAccess("sqlite");
+            //ISqlAccess db = new SqliteAccess("sqlite");
+            ISqlAccess db = new MSSqlAccess("sqlserver");
             userRepository = new UserRepository(db);
         }
 
