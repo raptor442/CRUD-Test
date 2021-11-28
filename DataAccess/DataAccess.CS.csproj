@@ -81,6 +81,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\DBAccessHelper.cs" />
     <Compile Include="Interfaces\ISqlAccess.cs" />
     <Compile Include="DbAccess\MSSqlAccess.cs" />
     <Compile Include="DbAccess\SqliteAccess.cs" />

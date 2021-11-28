@@ -1,8 +1,10 @@
 ﻿using DataAccess.DbAccess;
+using DataAccess.Helpers;
 using DataAccess.Models;
 using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace CRUD.UI
@@ -15,9 +17,12 @@ namespace CRUD.UI
         public CRUDForm()
         {
             InitializeComponent();
-            //ISqlAccess db = new SqliteAccess("sqlite");
-            ISqlAccess db = new MSSqlAccess("sqlserver");
-            userRepository = new UserRepository(db);
+
+            string connectionId = ConfigurationManager.AppSettings.Get("connectionId");
+            ISqlAccess dbAccess = DBAccessHelper.GetSqlAccess(connectionId);
+            userRepository = new UserRepository(dbAccess);
+
+            this.Text = this.Text + $" - {connectionId}";
         }
 
         private void button1_Click(object sender, EventArgs e)
