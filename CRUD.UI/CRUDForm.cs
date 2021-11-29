@@ -1,13 +1,13 @@
-﻿//using DataAccess.CS.Interfaces;
-//using DataAccess.CS.Helpers;
-//using DataAccess.CS.Models;
-//using DataAccess.CS.Repositories;
-//using DataAccess.CS.Config;
-using DataAccess.XS.Config;
-using DataAccess.XS.Helpers;
-using DataAccess.XS.Interfaces;
-using DataAccess.XS.Models;
-using DataAccess.XS.Repositories;
+﻿using DataAccess.CS.Interfaces;
+using DataAccess.CS.Helpers;
+using DataAccess.CS.Models;
+using DataAccess.CS.Repositories;
+using DataAccess.CS.Config;
+//using DataAccess.XS.Config;
+//using DataAccess.XS.Helpers;
+//using DataAccess.XS.Interfaces;
+//using DataAccess.XS.Models;
+//using DataAccess.XS.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -17,7 +17,7 @@ namespace CRUD.UI
     public partial class CRUDForm : Form
     {
         private List<User> users;
-        private readonly UserRepository userRepository;
+        private readonly IUserRepository userRepository;
 
         public CRUDForm()
         {
@@ -30,14 +30,14 @@ namespace CRUD.UI
             Text += $" - {configSettings.ConnectionId}";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             // Create
             User user = new User();
             user.FirstName = tbFirstName.Text;
             user.LastName = tbLastName.Text;
 
-            userRepository.InsertUser(user);
+            await userRepository.InsertUser(user);
 
             tbFirstName.Text = "";
             tbLastName.Text = "";
@@ -79,11 +79,6 @@ namespace CRUD.UI
         private void button2_Click(object sender, EventArgs e)
         {
             // Read
-            GetUsers();
-        }
-
-        private void GetUsers()
-        {
             LoadUsers();
         }
 
@@ -102,7 +97,6 @@ namespace CRUD.UI
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            //this.Text = dataGridView1.CurrentRow.Index.ToString();
             User selectedUser = (User)dataGridView1.CurrentRow.DataBoundItem;
 
             this.lblID.Text = selectedUser.Id.ToString();

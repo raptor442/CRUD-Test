@@ -4,7 +4,7 @@ USING System.Linq
 USING System.Text
 USING System.Windows.Forms
 
-USING CRUD.UI.XS.WinForm
+//USING CRUD.UI.XS.WinForm
 
 BEGIN NAMESPACE CRUD.UI.XS.WinForm
 

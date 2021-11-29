@@ -1,7 +1,7 @@
 ﻿BEGIN NAMESPACE CRUD.UI.XS.WinForm
 
     PUBLIC PARTIAL CLASS CRUDXSForm
-    PRIVATE dataGridView1 AS System.Windows.Forms.DataGridView
+    PROTECT dataGridView1 AS System.Windows.Forms.DataGridView
     PRIVATE lblID AS System.Windows.Forms.Label
     PRIVATE label2 AS System.Windows.Forms.Label
     PRIVATE label1 AS System.Windows.Forms.Label
