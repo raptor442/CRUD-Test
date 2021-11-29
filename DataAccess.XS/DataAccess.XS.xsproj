@@ -33,6 +33,7 @@
     <XSharpProjectversion>2.9.0.1</XSharpProjectversion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <StartupObject />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'" Label="Configuration">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -145,9 +146,11 @@
     <Reference Include="XSharp.VO" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\ConfigSettings.prg" />
     <Compile Include="DbAccess\MSSqlAccess.prg" />
     <Compile Include="DbAccess\SqliteAccess.prg" />
     <Compile Include="Helpers\DBAccessHelper.prg" />
+    <Compile Include="Interfaces\IConfigSettings.prg" />
     <Compile Include="Interfaces\ISqlAccess.prg" />
     <Compile Include="Models\User.prg" />
     <Compile Include="Properties\AssemblyInfo.prg">
@@ -160,6 +163,7 @@
     <Folder Include="Interfaces" />
     <Folder Include="Models" />
     <Folder Include="Helpers" />
+    <Folder Include="Config" />
     <Folder Include="Repositories" />
     <Folder Include="Properties\" />
   </ItemGroup>

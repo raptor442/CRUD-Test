@@ -5,17 +5,17 @@ namespace DataAccess.CS.Helpers
 {
     public class DBAccessHelper
     {
-        public static ISqlAccess GetSqlAccess(string connectionId)
+        public static ISqlAccess GetSqlAccess(IConfigSettings configSettings)
         {
             ISqlAccess sqlAccess = null;
 
-            switch (connectionId)
+            switch (configSettings.ConnectionId)
             {
                 case "sqlite":
-                    sqlAccess = new SqliteAccess(connectionId);
+                    sqlAccess = new SqliteAccess(configSettings);
                     break;
                 case "sqlserver":
-                    sqlAccess = new MSSqlAccess(connectionId);
+                    sqlAccess = new MSSqlAccess(configSettings);
                     break;
             }
 

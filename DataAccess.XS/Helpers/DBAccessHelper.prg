@@ -18,16 +18,16 @@ BEGIN NAMESPACE DataAccess.XS.Helpers
     /// </summary>
 	CLASS DBAccessHelper
  
-    PUBLIC STATIC METHOD GetSqlAccess(connectionId AS STRING) AS ISqlAccess
+    PUBLIC STATIC METHOD GetSqlAccess(configSettings AS IConfigSettings) AS ISqlAccess
         LOCAL sqlAccess AS ISqlAccess
         
-        SWITCH connectionId
+        SWITCH configSettings:ConnectionId
 		CASE "sqlite"
-			sqlAccess := SqliteAccess{connectionId}
+			sqlAccess := SqliteAccess{configSettings}
 		CASE "sqlserver"
-			sqlAccess := MSSqlAccess{connectionId}
+			sqlAccess := MSSqlAccess{configSettings}
 		OTHERWISE
-			sqlAccess := SqliteAccess{connectionId}
+			sqlAccess := SqliteAccess{configSettings}
 		END SWITCH
 		
         RETURN sqlAccess

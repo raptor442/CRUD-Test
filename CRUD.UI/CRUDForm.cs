@@ -1,14 +1,15 @@
-﻿using DataAccess.CS.Interfaces;
-using DataAccess.CS.Helpers;
-using DataAccess.CS.Models;
-using DataAccess.CS.Repositories;
-//using DataAccess.XS.Helpers;
-//using DataAccess.XS.Interfaces;
-//using DataAccess.XS.Models;
-//using DataAccess.XS.Repositories;
+﻿//using DataAccess.CS.Interfaces;
+//using DataAccess.CS.Helpers;
+//using DataAccess.CS.Models;
+//using DataAccess.CS.Repositories;
+//using DataAccess.CS.Config;
+using DataAccess.XS.Config;
+using DataAccess.XS.Helpers;
+using DataAccess.XS.Interfaces;
+using DataAccess.XS.Models;
+using DataAccess.XS.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Windows.Forms;
 
 namespace CRUD.UI
@@ -22,11 +23,11 @@ namespace CRUD.UI
         {
             InitializeComponent();
 
-            string connectionId = ConfigurationManager.AppSettings.Get("connectionId");
-            ISqlAccess dbAccess = DBAccessHelper.GetSqlAccess(connectionId);
+            IConfigSettings configSettings = new ConfigSettings();
+            ISqlAccess dbAccess = DBAccessHelper.GetSqlAccess(configSettings);
             userRepository = new UserRepository(dbAccess);
 
-            this.Text = this.Text + $" - {connectionId}";
+            Text += $" - {configSettings.ConnectionId}";
         }
 
         private void button1_Click(object sender, EventArgs e)

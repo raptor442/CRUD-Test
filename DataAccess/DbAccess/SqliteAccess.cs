@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using DataAccess.CS.Interfaces;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
@@ -11,15 +10,15 @@ namespace DataAccess.CS.DbAccess
 {
     public class SqliteAccess : ISqlAccess
     {
-        private readonly string connectionId;
-        public SqliteAccess(string connectionId)
+        private readonly IConfigSettings configSettings;
+        public SqliteAccess(IConfigSettings configSettings)
         {
-            this.connectionId = connectionId;
+            this.configSettings = configSettings;
         }
 
         public async Task<List<T>> LoadData<T, U>(string sqlCommand, U parameters)
         {
-            using (IDbConnection connection = new SQLiteConnection(GetConnectionString(connectionId)))
+            using (IDbConnection connection = new SQLiteConnection(configSettings.ConnectionString))
             {
                 var output = await connection.QueryAsync<T>(sqlCommand, new DynamicParameters());
                 return output.ToList();
@@ -28,16 +27,11 @@ namespace DataAccess.CS.DbAccess
 
         public async Task SaveData<T>(string sqlCommand, T parameters)
         {
-            using (IDbConnection connection = new SQLiteConnection(GetConnectionString(connectionId)))
+            using (IDbConnection connection = new SQLiteConnection(configSettings.ConnectionString))
             {
                 await connection.ExecuteAsync(sqlCommand, parameters);
             }
         }
 
-        private string GetConnectionString(string id = "Default")
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-            return connectionString;
-        }
     }
 }
