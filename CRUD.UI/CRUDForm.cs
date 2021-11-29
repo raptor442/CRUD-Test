@@ -1,7 +1,12 @@
-﻿using DataAccess.DbAccess;
-using DataAccess.Helpers;
-using DataAccess.Models;
-using DataAccess.Repositories;
+﻿//using DataAccess.DbAccess;
+//using DataAccess.Helpers;
+//using DataAccess.Models;
+//using DataAccess.Repositories;
+using DataAccess.XS.DbAccess;
+using DataAccess.XS.Helpers;
+using DataAccess.XS.Interfaces;
+using DataAccess.XS.Models;
+using DataAccess.XS.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

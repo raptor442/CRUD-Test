@@ -146,10 +146,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbAccess\SqliteAccess.prg" />
+    <Compile Include="Helpers\DBAccessHelper.prg" />
     <Compile Include="Interfaces\ISqlAccess.prg" />
+    <Compile Include="Models\User.prg" />
     <Compile Include="Properties\AssemblyInfo.prg">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Repositories\UserRepository.prg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DbAccess" />
