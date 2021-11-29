@@ -152,6 +152,7 @@
     <Compile Include="Helpers\DBAccessHelper.prg" />
     <Compile Include="Interfaces\IConfigSettings.prg" />
     <Compile Include="Interfaces\ISqlAccess.prg" />
+    <Compile Include="Interfaces\IUserRepository.prg" />
     <Compile Include="Models\User.prg" />
     <Compile Include="Properties\AssemblyInfo.prg">
       <SubType>Code</SubType>

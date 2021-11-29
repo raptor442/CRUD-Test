@@ -19,7 +19,7 @@ BEGIN NAMESPACE DataAccess.XS.Repositories
 	/// <summary>
     /// The UserRepository class.
     /// </summary>
-	PUBLIC CLASS UserRepository
+	PUBLIC CLASS UserRepository IMPLEMENTS IUserRepository
         PROTECT dbAccess AS ISqlAccess
  
     CONSTRUCTOR(db AS ISqlAccess)

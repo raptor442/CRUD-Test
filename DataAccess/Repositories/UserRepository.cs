@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.CS.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly ISqlAccess dbAccess;
 
