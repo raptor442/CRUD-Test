@@ -1,42 +1,40 @@
-﻿using DataAccess.DbAccess;
-using DataAccess.Models;
-using System;
+﻿using DataAccess.CS.Interfaces;
+using DataAccess.CS.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Repositories
+namespace DataAccess.CS.Repositories
 {
     public class UserRepository
     {
-        private readonly ISqlAccess _db;
+        private readonly ISqlAccess dbAccess;
 
         public UserRepository(ISqlAccess db)
         {
-            _db = db;
+            dbAccess = db;
         }
 
         public Task<List<User>> GetUsers()
         {
-            return _db.LoadData<User, dynamic>("SELECT * FROM Users", new { });
+            return dbAccess.LoadData<User, dynamic>("SELECT * FROM Users", new { });
         }
 
         public async Task<User> GetUser(int id)
         {
-            var results = await _db.LoadData<User, dynamic>(
-                "dbo.spUser_Get",
+            var results = await dbAccess.LoadData<User, dynamic>(
+                "SELECT * FROM Users WHERE Id = @Id",
                 new { Id = id });
             return results.FirstOrDefault();
         }
 
         public Task InsertUser(User user) =>
-            _db.SaveData("insert into Users (FirstName, LastName) values (@FirstName, @LastName)", user);
+            dbAccess.SaveData("insert into Users (FirstName, LastName) values (@FirstName, @LastName)", user);
 
         public Task UpdateUser(User user) =>
-            _db.SaveData("update Users set FirstName = @FirstName, LastName = @LastName WHERE Id = @Id", user);
+            dbAccess.SaveData("update Users set FirstName = @FirstName, LastName = @LastName WHERE Id = @Id", user);
 
         public Task DeleteUser(int id) =>
-            _db.SaveData("delete from Users WHERE Id = @Id", new { Id = id });
+            dbAccess.SaveData("delete from Users WHERE Id = @Id", new { Id = id });
     }
 }

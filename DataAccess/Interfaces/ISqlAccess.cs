@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DataAccess.DbAccess
+namespace DataAccess.CS.Interfaces
 {
     public interface ISqlAccess
     {

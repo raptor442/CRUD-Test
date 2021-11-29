@@ -1,6 +1,7 @@
-﻿using DataAccess.DbAccess;
+﻿using DataAccess.CS.DbAccess;
+using DataAccess.CS.Interfaces;
 
-namespace DataAccess.Helpers
+namespace DataAccess.CS.Helpers
 {
     public class DBAccessHelper
     {

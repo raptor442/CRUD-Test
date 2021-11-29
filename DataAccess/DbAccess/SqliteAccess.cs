@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DataAccess.CS.Interfaces;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -6,7 +7,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DataAccess.DbAccess
+namespace DataAccess.CS.DbAccess
 {
     public class SqliteAccess : ISqlAccess
     {

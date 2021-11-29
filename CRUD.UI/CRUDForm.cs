@@ -1,12 +1,11 @@
-﻿//using DataAccess.DbAccess;
-//using DataAccess.Helpers;
-//using DataAccess.Models;
-//using DataAccess.Repositories;
-using DataAccess.XS.DbAccess;
-using DataAccess.XS.Helpers;
-using DataAccess.XS.Interfaces;
-using DataAccess.XS.Models;
-using DataAccess.XS.Repositories;
+﻿using DataAccess.CS.Interfaces;
+using DataAccess.CS.Helpers;
+using DataAccess.CS.Models;
+using DataAccess.CS.Repositories;
+//using DataAccess.XS.Helpers;
+//using DataAccess.XS.Interfaces;
+//using DataAccess.XS.Models;
+//using DataAccess.XS.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -45,7 +44,7 @@ namespace CRUD.UI
             LoadUsers();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
             // Update
             User selectedUser = (User)dataGridView1.CurrentRow?.DataBoundItem;
@@ -56,12 +55,12 @@ namespace CRUD.UI
             selectedUser.FirstName = tbFirstName.Text;
             selectedUser.LastName = tbLastName.Text;
 
-            userRepository.UpdateUser(selectedUser);
+            await userRepository.UpdateUser(selectedUser);
 
             LoadUsers();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private async void button4_Click(object sender, EventArgs e)
         {
             // Delete
             User selectedUser = (User)dataGridView1.CurrentRow?.DataBoundItem;
@@ -71,7 +70,8 @@ namespace CRUD.UI
                 return;
             }
 
-            userRepository.DeleteUser(selectedUser.Id);
+            await userRepository.DeleteUser(selectedUser.Id);
+
             LoadUsers();
         }
 

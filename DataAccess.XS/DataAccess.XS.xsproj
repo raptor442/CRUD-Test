@@ -145,6 +145,7 @@
     <Reference Include="XSharp.VO" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbAccess\MSSqlAccess.prg" />
     <Compile Include="DbAccess\SqliteAccess.prg" />
     <Compile Include="Helpers\DBAccessHelper.prg" />
     <Compile Include="Interfaces\ISqlAccess.prg" />

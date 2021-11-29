@@ -25,7 +25,7 @@ BEGIN NAMESPACE DataAccess.XS.Helpers
 		CASE "sqlite"
 			sqlAccess := SqliteAccess{connectionId}
 		CASE "sqlserver"
-			sqlAccess := SqliteAccess{connectionId}
+			sqlAccess := MSSqlAccess{connectionId}
 		OTHERWISE
 			sqlAccess := SqliteAccess{connectionId}
 		END SWITCH
