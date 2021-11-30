@@ -44,9 +44,10 @@ namespace CRUD.UI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 173);
+            this.button1.Location = new System.Drawing.Point(18, 141);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 2;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@ namespace CRUD.UI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(804, 208);
+            this.button2.Location = new System.Drawing.Point(603, 169);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 5;
             this.button2.Text = "Read";
             this.button2.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@ namespace CRUD.UI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(105, 173);
+            this.button3.Location = new System.Drawing.Point(79, 141);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(56, 19);
             this.button3.TabIndex = 3;
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@ namespace CRUD.UI
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(251, 173);
+            this.button4.Location = new System.Drawing.Point(188, 141);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(56, 19);
             this.button4.TabIndex = 4;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = true;
@@ -88,63 +92,69 @@ namespace CRUD.UI
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(349, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(262, 10);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(530, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(398, 150);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(105, 43);
+            this.tbFirstName.Location = new System.Drawing.Point(79, 35);
+            this.tbFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(221, 22);
+            this.tbFirstName.Size = new System.Drawing.Size(167, 20);
             this.tbFirstName.TabIndex = 0;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(105, 71);
+            this.tbLastName.Location = new System.Drawing.Point(79, 58);
+            this.tbLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(221, 22);
+            this.tbLastName.Size = new System.Drawing.Size(167, 20);
             this.tbLastName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 44);
+            this.label1.Location = new System.Drawing.Point(17, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "FirstName:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 76);
+            this.label2.Location = new System.Drawing.Point(17, 62);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "LastName:";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(23, 9);
+            this.lblID.Location = new System.Drawing.Point(17, 7);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(19, 17);
+            this.lblID.Size = new System.Drawing.Size(15, 13);
             this.lblID.TabIndex = 9;
             this.lblID.Text = "id";
             // 
             // CRUDForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 243);
+            this.ClientSize = new System.Drawing.Size(668, 197);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -155,10 +165,11 @@ namespace CRUD.UI
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "CRUDForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Joe The CRUD";
+            this.Text = "Joe The CRUD (CS)";
             this.Load += new System.EventHandler(this.CRUDForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
