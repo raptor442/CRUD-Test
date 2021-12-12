@@ -8,17 +8,21 @@
 USING System
 USING System.Collections.Generic
 USING System.Text
+USING DataAccess.XS.Interfaces
 
 BEGIN NAMESPACE DataAccess.XS.Models
 
 	/// <summary>
     /// The User class.
     /// </summary>
-	CLASS User
+	CLASS User IMPLEMENTS ICodeAndDescription
  
 	PROPERTY Id			AS INT AUTO
 	PROPERTY FirstName 	AS STRING AUTO
 	PROPERTY LastName 	AS STRING AUTO
+        
+    PROPERTY Code AS STRING AUTO
+    PROPERTY Description AS STRING AUTO
 
 	END CLASS
 END NAMESPACE // DataAccess.XS.Models

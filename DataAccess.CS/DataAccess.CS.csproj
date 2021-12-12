@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ConfigSettings.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Interfaces\ICodeAndDescription.cs" />
     <Compile Include="Interfaces\IConfigSettings.cs" />
     <Compile Include="Helpers\DBAccessHelper.cs" />
     <Compile Include="Interfaces\ISqlAccess.cs" />

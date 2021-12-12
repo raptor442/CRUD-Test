@@ -14,6 +14,7 @@ USING DataAccess.XS.Config
 USING DataAccess.XS.Helpers
 USING DataAccess.XS.Repositories
 USING DataAccess.XS.Models
+USING DataAccess.XS.Extensions
 
 BEGIN NAMESPACE CRUD.UI.XS.WinForm
 
@@ -113,7 +114,10 @@ BEGIN NAMESPACE CRUD.UI.XS.WinForm
 
         PRIVATE ASYNC METHOD LoadUsers() AS VOID STRICT
             SELF:users := AWAIT SELF:userRepository:GetUsers()
+            LOCAL codeAndDescriptionList AS List<ICodeAndDescription>
             
+            codeAndDescriptionList:Seek("test", FALSE, FALSE)
+            //(SELF:users AS List<ICodeAndDescription):Seek("test", FALSE, FALSE)
             SELF:dataGridView1:DataSource := null
             SELF:dataGridView1:DataSource := SELF:users        
         RETURN

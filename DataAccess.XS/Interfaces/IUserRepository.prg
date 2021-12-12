@@ -22,7 +22,7 @@ BEGIN NAMESPACE DataAccess.XS.Interfaces
     METHOD GetUser(id AS INT) AS Task<User>
     METHOD GetUsers() AS Task<List<User>>
     METHOD InsertUser(user AS User) AS Task<INT>        
-    METHOD UpdateUser(user AS User) AS Task<INT>            
-    
+    METHOD UpdateUser(user AS User) AS Task<INT>   
+        
 	END INTERFACE
 END NAMESPACE // DataAccess.XS.Interfaces

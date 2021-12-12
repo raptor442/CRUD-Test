@@ -149,7 +149,9 @@
     <Compile Include="Config\ConfigSettings.prg" />
     <Compile Include="DbAccess\MSSqlAccess.prg" />
     <Compile Include="DbAccess\SqliteAccess.prg" />
+    <Compile Include="Extensions\ListExtensions.prg" />
     <Compile Include="Helpers\DBAccessHelper.prg" />
+    <Compile Include="Interfaces\ICodeAndDescription.prg" />
     <Compile Include="Interfaces\IConfigSettings.prg" />
     <Compile Include="Interfaces\ISqlAccess.prg" />
     <Compile Include="Interfaces\IUserRepository.prg" />
@@ -165,6 +167,7 @@
     <Folder Include="Models" />
     <Folder Include="Helpers" />
     <Folder Include="Config" />
+    <Folder Include="Extensions" />
     <Folder Include="Repositories" />
     <Folder Include="Properties\" />
   </ItemGroup>
